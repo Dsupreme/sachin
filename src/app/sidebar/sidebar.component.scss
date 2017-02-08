@@ -1,0 +1,31 @@
+.sidebar {
+  padding: 20px 15px 20px 0;
+  border-right: 1px solid #ccc;
+  .sidebar-heading {
+    font-size: 1.5em;
+  }
+  .sidebar-navbar {
+    padding: 20px 0;
+    .nav-header {
+      border-bottom: 1px solid #ccc;
+      cursor: pointer;
+    }
+    .nav-item {
+      .nav-panel {
+        display: none;
+        ul {
+          padding-left: 20px;
+          li {
+            list-style-type: none;
+          }
+        }
+        &.active {
+          display: block;
+        }
+        label {
+          margin-bottom: 0em;
+        }
+      }
+    }
+  }
+}
