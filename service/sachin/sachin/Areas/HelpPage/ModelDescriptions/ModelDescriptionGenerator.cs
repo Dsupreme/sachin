@@ -74,7 +74,7 @@ namespace sachin.Areas.HelpPage.ModelDescriptions
             { typeof(SByte), "signed byte" },
             { typeof(Uri), "URI" },
             { typeof(Single), "decimal number" },
-            { typeof(Double), "decimal number" },
+            { typeof(float), "decimal number" },
             { typeof(Decimal), "decimal number" },
             { typeof(String), "string" },
             { typeof(Guid), "globally unique identifier" },

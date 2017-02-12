@@ -8854,7 +8854,7 @@ var fxNow, timerId,
 				start = +target || 1;
 
 				do {
-					// If previous iteration zeroed out, double until we get *something*
+					// If previous iteration zeroed out, float until we get *something*
 					// Use a string for doubling factor so we don't accidentally see scale as unchanged below
 					scale = scale || ".5";
 

@@ -19,7 +19,7 @@ namespace sachin
     public partial class Startup
     {
         public static OAuthAuthorizationServerOptions OAuthOptions { get; private set; }
-        public static DataTable SachinDB { get; set;}
+        public static DataTable SachinDB { get; set; }
 
         public static string PublicClientId { get; private set; }
 
@@ -79,32 +79,32 @@ namespace sachin
 
             using (StreamReader sr = new StreamReader(path))
             {
-                while (!sr.EndOfStream)  
-                {  
+                while (!sr.EndOfStream)
+                {
                     Fulltext = sr.ReadToEnd().ToString(); //read full file text  
                     string[] rows = Fulltext.Split('\n'); //split full file text into rows 
 
-                    for (int i=0;i<rows.Count()-1; i++)
+                    for (int i = 0; i < rows.Count() - 1; i++)
                     {
                         string[] rowValues = rows[i].Split(','); //split each row with comma to get individual values  
-                        {  
-                            if (i == 0)  
-                            {  
-                                for (int j = 0; j < rowValues.Count(); j++)  
-                                {  
+                        {
+                            if (i == 0)
+                            {
+                                for (int j = 0; j < rowValues.Count(); j++)
+                                {
                                     SachinDB.Columns.Add(rowValues[j]); //add headers  
-                                }  
-                            }  
-                            else  
-                            {  
-                                DataRow dr = SachinDB.NewRow();  
-                                for (int k = 0; k < rowValues.Count(); k++)  
-                                {  
-                                    dr[k] = rowValues[k].ToString();  
-                                }  
+                                }
+                            }
+                            else
+                            {
+                                DataRow dr = SachinDB.NewRow();
+                                for (int k = 0; k < rowValues.Count(); k++)
+                                {
+                                    dr[k] = rowValues[k].ToString();
+                                }
                                 SachinDB.Rows.Add(dr); //add other rows  
-                            }  
-                        }  
+                            }
+                        }
                     }
                 }
             }

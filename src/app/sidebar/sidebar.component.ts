@@ -11,13 +11,35 @@ export class SidebarComponent implements OnInit {
   private state
   private data
 
-  private countryListArr
+  private countryArr
+  private inningsArr
+  private matchResultArr
+  private groundLocationArr
 
   constructor(private _sachinSvc: SachinService) {
     this.state = {
       countryPanelOpen: false,
-      countryList: {}
+      battingInningsPanelOpen: false,
+      matchResultPanelOpen: false,
+      groundLocationPanelOpen: false,
+      countryList: {},
+      inningsList: {
+        "1st": true,
+        "2nd": true
+      },
+      matchResultList: {
+        "won": true,
+        "lost": true
+      },
+      groundLocationList: {
+        "Home": true,
+        "Away": true
+      }
     };
+
+    this.inningsArr = ["1st", "2nd"]
+    this.matchResultArr = ["won", "lost"]
+    this.groundLocationArr = ["Home", "Away"]
   }
 
   ngOnInit() {
@@ -25,33 +47,52 @@ export class SidebarComponent implements OnInit {
     this.fetchOpposition();
   }
 
+  // To fetch the list of countries from Service instead of hard coding in component
   fetchOpposition() {
     this._sachinSvc.getOpposition().subscribe(teams => {
       this.state.countryList = teams;
       // Fetch keys in Array to render "vs Country" filter
-      this.countryListArr = Object.keys(this.state.countryList);
+      this.countryArr = Object.keys(this.state.countryList);
     });
   }
 
-  fnToggleCountry(e) {
-    this.state.countryList[e.value] = e.checked;
-    // console.log(this.state.countryList);
-    // call update chart functions here
-    this.render();
-  }
-
+  // Toggle panel open/close state
   fnToggleState(panel) {
     this.state[panel] = !this.state[panel];
   }
 
+  // Update list of selected countries
+  fnToggleCountry(e) {
+    this.state.countryList[e.value] = e.checked;
+    this.render();
+  }
+
+  // Update list of selected batting innings
+  fnToggleInnings(e) {
+    this.state.inningsList[e.value] = e.checked;
+    this.render();
+  }
+
+  // Update list of selected match result
+  fnToggleMatchResult(e) {
+    this.state.matchResultList[e.value] = e.checked;
+    this.render();
+  }
+
+  // Update list of selected ground venues
+  fnToggleGroundLocation(e) {
+    this.state.groundLocationList[e.value] = e.checked;
+    this.render();
+  }
+
+  // Function to render all the charts.
   render() {
     this._sachinSvc.fetchBattingAverage({
-      countries: this.state.countryList
-    }).subscribe(data => {
-      this.data = data;
-      console.log(this.data);
-    }
-      )
+      countries: this.state.countryList,
+      innings: this.state.inningsList,
+      result: this.state.matchResultList,
+      ground: this.state.groundLocationList
+    });
   }
 
 }

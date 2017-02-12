@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
 
+import { SachinService } from '../shared/sachin.service';
+
 
 Highcharts.setOptions({
   colors: ['#058DC7', '#50B432', '#ED561B']
@@ -14,8 +16,17 @@ Highcharts.setOptions({
 })
 export class MainComponent implements OnInit {
   options: Object
+  battingAverage: Object
+  private _subscription
 
-  constructor() {
+  constructor(private _sachinSvc: SachinService) {
+    // this.battingAverage = _sachinSvc.battingAverage;
+    this._subscription = _sachinSvc.getBattingAverage().subscribe((value) => {
+      this.battingAverage = value;
+    })
+
+
+
     this.options = {
       "chart": {
         "type": "column"
@@ -90,9 +101,14 @@ export class MainComponent implements OnInit {
         }
       ]
     };
+
   }
 
   ngOnInit() {
+  }
+
+  ngOnDestroy() {
+    this._subscription.unsubscribe();
   }
 
 }

@@ -410,7 +410,7 @@ namespace sachin.Areas.HelpPage
                     { typeof(DateTimeOffset), index => new DateTimeOffset(DateTime.Now) },
                     { typeof(DBNull), index => DBNull.Value },
                     { typeof(Decimal), index => (Decimal)index },
-                    { typeof(Double), index => (Double)(index + 0.1) },
+                    { typeof(float), index => (float)(index + 0.1) },
                     { typeof(Guid), index => Guid.NewGuid() },
                     { typeof(Int16), index => (Int16)(index % Int16.MaxValue) },
                     { typeof(Int32), index => (Int32)(index % Int32.MaxValue) },
