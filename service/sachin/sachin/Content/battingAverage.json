@@ -1,0 +1,61 @@
+{
+  "chart": {},
+  "title": {
+    "text": "Batting Performance Timeline"
+  },
+  "xAxis": {
+    "crosshair": true,
+    "categories": []
+  },
+  "yAxis": [{
+    "title": {
+      "text": "Batting Averages",
+      "style": {
+        "color": "#058DC7"
+      }
+    },
+    "labels": {
+      "format": "{value} runs",
+      "style": {
+        "color": "#50b432"
+      }
+    },
+
+    "opposite": true
+
+  }, {
+    "gridLineWidth": 0,
+    "title": {
+      "text": "Runs Scored",
+      "style": {
+        "color": "#058DC7"
+      }
+    },
+    "labels": {
+      "format": "{value} runs",
+      "style": {
+        "color": "#50b432"
+      }
+    }
+
+  }],
+  "tooltip": {
+    "shared": true
+  },
+  "series": [{
+    "name": "Cumulative Batting Scores",
+    "type": "line",
+    "yAxis": 1,
+    "data": [],
+    "tooltip": {
+      "valueSuffix": " run(s)"
+    }
+  }, {
+    "name": "Cumulative Batting Averages",
+    "data": [],
+    "yAxis": 0,
+    "tooltip": {
+      "valueSuffix": " run(s)"
+    }
+  }]
+}

@@ -22,7 +22,7 @@ import { MainComponent } from './main/main.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    ChartModule
+    ChartModule // highcharts module
   ],
   providers: [SachinService],
   bootstrap: [AppComponent]

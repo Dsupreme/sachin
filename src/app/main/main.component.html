@@ -1,13 +1,38 @@
 <div class="content">
-  <div class="row">
-    <div class="col-sm-10">
+  <div id="row1" class="row p-2">
+    <div class="col-sm-9">
       <chart [options]="battingAverage"></chart>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-6">
-      <chart [options]="options"></chart>
+    <!-- Inference 1 -->
+    <div class="col-sm-3 card">
+      <div class="card-block">
+        <h6 class="card-subtitle mb-2 text-muted">How has Sachin's batting average scaled over the years ?</h6>
+        <p class="card-text">
+          Barring few years in the early stages of his career, he has been a consistent performer.<br/> <br/>From the year
+          1998 till the end of his career, he has an average over 40.
+        </p>
+      </div>
     </div>
-    <div class="col-sm-6">Chart3</div>
   </div>
-</div>
+  <div id="row2" class="row p-2">
+    <div class="col-sm-9">
+      <chart [options]="versusTeams"></chart>
+    </div>
+    <!-- Inference 2 -->
+    <div class="col-sm-3 card">
+      <div class="card-block">
+        <h6 class="card-subtitle mb-2 text-muted">How does Sachin's presence affect the match result ?</h6>
+        <p class="card-text">
+          Sachin has lost more to Top ranking teams namely Australia, South Africa. Though his performance has been neck to neck with
+          Asian Subcontinent teams.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="row3" class="row p-2">
+    <div class="col-sm-12">
+      <div class="alert alert-success" role="alert">
+        <strong>Yes!</strong> Sachin is a great batsman of his time.
+      </div>
+    </div>
+  </div>

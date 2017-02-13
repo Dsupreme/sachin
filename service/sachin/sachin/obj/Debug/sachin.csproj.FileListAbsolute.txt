@@ -158,6 +158,6 @@ D:\Learning\socialCops\service\sachin\sachin\bin\Microsoft.Owin.Security.Google.
 D:\Learning\socialCops\service\sachin\sachin\bin\Microsoft.Owin.Security.Twitter.xml
 D:\Learning\socialCops\service\sachin\sachin\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\Learning\socialCops\service\sachin\sachin\bin\System.Web.Http.Owin.xml
+D:\Learning\socialCops\service\sachin\sachin\obj\Debug\sachin.csprojResolveAssemblyReference.cache
 D:\Learning\socialCops\service\sachin\sachin\obj\Debug\sachin.dll
 D:\Learning\socialCops\service\sachin\sachin\obj\Debug\sachin.pdb
-D:\Learning\socialCops\service\sachin\sachin\obj\Debug\sachin.csprojResolveAssemblyReference.cache

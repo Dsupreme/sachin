@@ -74,7 +74,7 @@ namespace sachin
         {
             SachinDB = new DataTable();
 
-            string path = ConfigurationManager.AppSettings["path"];
+            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, ConfigurationManager.AppSettings["path"]);
             string Fulltext;
 
             using (StreamReader sr = new StreamReader(path))

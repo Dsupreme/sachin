@@ -1,15 +1,21 @@
 .sidebar {
-  padding: 20px 15px 20px 0;
+  padding: 25px 0px 20px 20px;
   .sidebar-heading {
-    font-size: 1.5em;
+    font-size: 1.25em;
+  }
+  .sidebar-description {
+    padding-top: 20px;
+    font-size: 0.875em;
   }
   .sidebar-navbar {
     padding: 20px 0;
+    font-size: 0.875em;
     .nav-header {
       border-bottom: 1px solid #ccc;
       cursor: pointer;
     }
     .nav-item {
+      padding: 10px 0;
       .nav-panel {
         display: none;
         ul {

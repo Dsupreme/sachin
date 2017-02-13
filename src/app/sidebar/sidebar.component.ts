@@ -11,12 +11,14 @@ export class SidebarComponent implements OnInit {
   private state
   private data
 
+  // For rendering filter values. Converting Object keys into an iterable object.
   private countryArr
   private inningsArr
   private matchResultArr
   private groundLocationArr
 
   constructor(private _sachinSvc: SachinService) {
+    // Defining default values
     this.state = {
       countryPanelOpen: false,
       battingInningsPanelOpen: false,
@@ -88,6 +90,12 @@ export class SidebarComponent implements OnInit {
   // Function to render all the charts.
   render() {
     this._sachinSvc.fetchBattingAverage({
+      countries: this.state.countryList,
+      innings: this.state.inningsList,
+      result: this.state.matchResultList,
+      ground: this.state.groundLocationList
+    });
+    this._sachinSvc.fetchVersusTeams({
       countries: this.state.countryList,
       innings: this.state.inningsList,
       result: this.state.matchResultList,

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Web;
 
 
 namespace sachin.Models
@@ -11,17 +10,25 @@ namespace sachin.Models
         public dynamic selectedInnings { get; set; }
         public dynamic selectedResult { get; set; }
         public dynamic selectedGround { get; set; }
+        public FiltersModel()
+        {
+            selectedCountries = new Object();
+            selectedInnings = new Object();
+            selectedResult = new Object();
+            selectedGround = new Object();
+        }
     }
 
     public class GroundLocationModel
     {
-        public Dictionary<string,List<string>> groundlocation {get;set; }
+        public Dictionary<string, List<string>> groundlocation { get; set; }
         public GroundLocationModel()
         {
-            groundlocation = new Dictionary<string,List<string>>();
+            groundlocation = new Dictionary<string, List<string>>();
             groundlocation.Add("Home", new List<string>());
             groundlocation.Add("Away", new List<string>());
 
+            // Segregating grounds on the basis of location
             groundlocation["Home"].Add("Nagpur");
             groundlocation["Home"].Add("Pune");
             groundlocation["Home"].Add("Margao");
